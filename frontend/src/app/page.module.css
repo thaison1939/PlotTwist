@@ -1,0 +1,15 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.under {
+  flex: 2.5;
+  background-color: #4b3b3c;
+}
+
+.top {
+  flex: 8.5;
+  background-color: #e5d2ae;
+}
