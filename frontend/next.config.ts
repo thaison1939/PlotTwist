@@ -4,4 +4,13 @@ const nextConfig: NextConfig = {
   /* config options here */
 };
 
+module.exports = {
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  env: {
+    NEXT_PUBLIC_API_KEY: process.env.NEXT_PUBLIC_API_KEY,
+  }
+}
+
 export default nextConfig;

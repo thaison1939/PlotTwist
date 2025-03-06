@@ -1,0 +1,25 @@
+services:
+  backend:
+    image: thaison39/plottwist-backend:latest
+    ports: 
+      - "5000:5000"
+    env_file:
+      - ./backend/.env
+    volumes:
+      - shared-data:/app/data
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        - NEXT_PUBLIC_API_KEY=2fb624cdd5bdb40b6b477f568bf533928a290bfbee412984137dc2ed786b98f2
+    image: thaison39/plottwist-frontend:latest
+    ports: 
+      - "3000:3000"
+    depends_on:
+      - backend
+    volumes:
+      - shared-data:/app/data
+
+volumes:
+  shared-data:
