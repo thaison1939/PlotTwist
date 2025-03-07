@@ -16,12 +16,10 @@ async function testQuery() {
     try {
         console.log("Starting query tests...");
 
-        // Test unquoted "Celebs"
         const { data: rawData, error: rawError } = await supabase.from('Celebs').select('*');
         console.log("Raw Celebs data:", rawData);
         console.log("Raw error:", rawError);
 
-        // Test count with unquoted name
         const { count, error: countError } = await supabase
             .from('Celebs')
             .select("*", { count: "exact", head: true });
