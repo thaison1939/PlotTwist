@@ -10,6 +10,10 @@ module.exports = {
   },
   env: {
     NEXT_PUBLIC_API_KEY: process.env.NEXT_PUBLIC_API_KEY,
+    AWS_LAMBDA: process.env.AWS_LAMBDA,
+  },
+  images: {
+    domains: ['plottwist-images.s3.amazonaws.com'],
   }
 }
 
