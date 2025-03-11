@@ -2,7 +2,7 @@
 
 **PlotTwist** is a dynamic web-based quiz application built with **Next.js** and **TypeScript**, featuring a serverless backend powered by **AWS Lambda**, **Amazon S3**, and **Supabase**. It challenges users to spot the lie among three truths about celebrities, creating a fun and engaging experience. 
 
-## ☁️ AWS Integration  
+## AWS Integration  
 
 The backend is built on a serverless architecture with AWS, ensuring scalability and reliability:  
 
