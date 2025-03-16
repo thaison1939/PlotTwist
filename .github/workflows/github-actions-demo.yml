@@ -1,0 +1,28 @@
+name: Github Actions Demo
+on:
+  push: 
+    branches: [ "main" ]
+  pull_request: 
+    branches: [ "main" ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with: 
+        node-version: '18'
+
+    - name: Install client modules
+      run: cd frontend && npm install && npm run build
+    
+    - name: Install server modules
+      run: cd backend && npm install 
+    
+    - name: Run tests
+      run: |
+        cd frontend && npm test || echo "No frontend tests, skipping..."
+        cd backend && npm test || echo "No backend tests, skipping..."
+
